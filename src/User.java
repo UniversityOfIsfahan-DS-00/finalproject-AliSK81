@@ -1,3 +1,5 @@
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -21,13 +23,15 @@ public class User {
     private HashSet<String> connectionId;
 
     // score rate of each property
+    @JsonIgnore
     private Rates rates;
 
     public User() {
         rates = new Rates();
     }
 
-    public User(String id, String name, String dateOfBirth, String universityLocation, String field, String workplace, HashSet<String> specialties) {
+    public User(String id, String name, String dateOfBirth, String universityLocation, String field, String workplace,
+                HashSet<String> specialties, HashSet<String> connectionId) {
         this();
         this.id = id;
         this.name = name;
@@ -36,7 +40,7 @@ public class User {
         this.field = field;
         this.workplace = workplace;
         this.specialties = specialties;
-        this.connectionId = new HashSet<>();
+        this.connectionId = connectionId;
     }
 
     @Override

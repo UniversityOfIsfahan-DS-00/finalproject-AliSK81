@@ -11,7 +11,10 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        dataSet = new DataSet("users2.json");
+//        dataSet = new DataSet("users4.json");
+//        dataSet.saveFile(dataSet.randomDataSet(10));
+
+        dataSet = new DataSet("users.json");
 
         List<User> users = dataSet.readFile();
 
@@ -50,7 +53,7 @@ public class Main {
         System.out.println("Enter Info:");
         System.out.println("name, dateOfBirth, universityLocation, field, workplace");
 
-        User user = new User(userID, sc.next(), sc.next(), sc.next(), sc.next(), sc.next(), null);
+        User user = new User(userID, sc.next(), sc.next(), sc.next(), sc.next(), sc.next(), null, new HashSet<>());
 
         System.out.println("Enter Specialties Separated by Space:");
         user.setSpecialties(
