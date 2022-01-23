@@ -7,7 +7,7 @@ public class Rates {
     private int degree;
 
     public Rates() {
-        this(2, 500, 750, 900, 1200, 100);
+        this(1, 350, 450, 550, 1000, 100);
     }
 
     public Rates(int dateOfBirth, int universityLocation, int field, int workplace, int specialties, int degree) {
@@ -17,6 +17,18 @@ public class Rates {
         this.workplace = workplace;
         this.specialties = specialties;
         this.degree = degree;
+    }
+
+    @Override
+    public String toString() {
+        return "Rates{" +
+                "dateOfBirth=" + dateOfBirth +
+                ", universityLocation=" + universityLocation +
+                ", field=" + field +
+                ", workplace=" + workplace +
+                ", specialties=" + specialties +
+                ", degree=" + degree +
+                '}';
     }
 
     public int getDateOfBirth() {

@@ -7,7 +7,6 @@ import java.util.concurrent.TimeUnit;
 
 public class User {
 
-    Rates rates;
     // General Info
     private String id;
     private String name;
@@ -21,11 +20,14 @@ public class User {
     // Connections
     private HashSet<String> connectionId;
 
+    // score rate of each property
+    private Rates rates;
+
     public User() {
         rates = new Rates();
     }
 
-    public User(String id, String name, String dateOfBirth, String universityLocation, String field, String workplace, HashSet<String> specialties, HashSet<String> connectionId) {
+    public User(String id, String name, String dateOfBirth, String universityLocation, String field, String workplace, HashSet<String> specialties) {
         this();
         this.id = id;
         this.name = name;
@@ -34,7 +36,7 @@ public class User {
         this.field = field;
         this.workplace = workplace;
         this.specialties = specialties;
-        this.connectionId = connectionId;
+        this.connectionId = new HashSet<>();
     }
 
     @Override
@@ -79,8 +81,20 @@ public class User {
         return specialties;
     }
 
+    public void setSpecialties(HashSet<String> specialties) {
+        this.specialties = specialties;
+    }
+
     public HashSet<String> getConnectionId() {
         return connectionId;
+    }
+
+    public Rates getRates() {
+        return rates;
+    }
+
+    public void setRates(Rates rates) {
+        this.rates = rates;
     }
 
     public int score(User user, int degree) {
@@ -117,5 +131,6 @@ public class User {
 
         return Math.max(0, 3600 - diff) / 10;
     }
+
 
 }
