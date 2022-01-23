@@ -83,9 +83,9 @@ public class User {
         return connectionId;
     }
 
-    public int score(User user, int level) {
+    public int score(User user, int degree) {
 
-        int score = rates.getLevel() / level;
+        int score = rates.getDegree() / degree;
 
         score += rates.getDateOfBirth() * diffAge(dateOfBirth, user.getDateOfBirth());
 

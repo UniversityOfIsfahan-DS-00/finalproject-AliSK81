@@ -4,19 +4,19 @@ public class Rates {
     private int field;
     private int workplace;
     private int specialties;
-    private int level;
+    private int degree;
 
     public Rates() {
         this(2, 500, 750, 900, 1200, 100);
     }
 
-    public Rates(int dateOfBirth, int universityLocation, int field, int workplace, int specialties, int level) {
+    public Rates(int dateOfBirth, int universityLocation, int field, int workplace, int specialties, int degree) {
         this.dateOfBirth = dateOfBirth;
         this.universityLocation = universityLocation;
         this.field = field;
         this.workplace = workplace;
         this.specialties = specialties;
-        this.level = level;
+        this.degree = degree;
     }
 
     public int getDateOfBirth() {
@@ -59,11 +59,11 @@ public class Rates {
         this.specialties = specialties;
     }
 
-    public int getLevel() {
-        return level;
+    public int getDegree() {
+        return degree;
     }
 
-    public void setLevel(int level) {
-        this.level = level;
+    public void setDegree(int degree) {
+        this.degree = degree;
     }
 }
